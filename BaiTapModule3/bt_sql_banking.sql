@@ -101,20 +101,6 @@ begin
         );
 end //
 
--- 3. chuyển tiền (transfers)
--- - id: k cần nhập;
--- - created_at = now();
--- - created_by : null
--- - deleted: 0
--- - updated_at: null;
--- - updated_by: 
--- - fees: 5%
--- - fees_amount = 5% * số tiền chuyển khoản
--- - transaction_amount: số tiền giao dịch = số tiền chuyển khoản + phí
--- - transfer_amount: số tiền chuyển khoản
--- - recipient_id: id người nhận
--- - sender_id: id người gửi
-
 delimiter //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_deposits`(
 	IN sFullName varchar(100),
@@ -234,39 +220,37 @@ begin
     set sTransactionAmount = sTransferAmount + sFeesAmount;
     
     if(not exists (SELECT `email` FROM `customers` where `email` COLLATE utf8mb4_0900_ai_ci like sEmailSender)) then 
-		call sp_insert_customer(
-								sFullNameSender, 
-								sEmailSender, 
-								sPhoneSender, 
-								sAddressSender
-                                );
-        set sCustomerIdSender = (SELECT id FROM `customers` where `email` COLLATE utf8mb4_0900_ai_ci like sEmailSender);
-		UPDATE `customers` SET `balance` = `sTransactionAmount` WHERE (`id` = sCustomerIdSender);
+		set sMessage = "Người gửi chưa có trong hệ thống!";
+        else
+			if(not exists (SELECT `email` FROM `customers` where `email` COLLATE utf8mb4_0900_ai_ci like sEmailRecipient)) then 
+			set sMessage = "Người nhận chưa có trong hệ thống!";
+			else
+				set sCustomerIdRecipient = (SELECT id FROM `customers` where `email` COLLATE utf8mb4_0900_ai_ci like sEmailRecipient);
+				set sCustomerIdSender = (SELECT id FROM `customers` where `email` COLLATE utf8mb4_0900_ai_ci like sEmailSender);
+				if( exists( SELECT `balance` FROM `customers` WHERE id = sCustomerIdSender and `balance` >= sTransactionAmount)) then
+					call `sp_withdraws`(sFullNameSender, 
+										sEmailSender, 
+										sPhoneSender, 
+										sAddressSender, 
+										sTransactionAmount, 
+										sMessage);
+					call `sp_deposits`(sFullNameRecipient, 
+										sEmailRecipient, 
+										sPhoneRecipient, 
+										sAddressRecipient, 
+										sTransferAmount);
+					call `sp_insert_transfers` (sFees , sFeesAmount, sTransactionAmount, sTransferAmount, sCustomerIdRecipient, sCustomerIdSender);
+					set sMessage = "Chuyển tiền thành công!";
+				else
+					set sMessage = "Số tiền muốn chuyển lớn hơn số tiền hiện có trong tài khoản";
+				end if;
+		end if;
     end if;
-    
-    if(not exists (SELECT `email` FROM `customers` where `email` COLLATE utf8mb4_0900_ai_ci like sEmailRecipient)) then 
-		set sMessage = "Người nhận chưa có trong hệ thống!";
-	else
-		set sCustomerIdRecipient = (SELECT id FROM `customers` where `email` COLLATE utf8mb4_0900_ai_ci like sEmailRecipient);
-		set sCustomerIdSender = (SELECT id FROM `customers` where `email` COLLATE utf8mb4_0900_ai_ci like sEmailSender);
-		if( exists( SELECT `balance` FROM `customers` WHERE id = sCustomerIdSender and `balance` >= sTransactionAmount)) then
-			call `sp_withdraws`(sFullNameSender, 
-								sEmailSender, 
-								sPhoneSender, 
-                                sAddressSender, 
-								sTransactionAmount, 
-                                sMessage);
-            call `sp_deposits`(sFullNameRecipient, 
-								sEmailRecipient, 
-								sPhoneRecipient, 
-                                sAddressRecipient, 
-								sTransferAmount);
-            call `sp_insert_transfers` (sFees , sFeesAmount, sTransactionAmount, sTransferAmount, sCustomerIdRecipient, sCustomerIdSender);
-			set sMessage = "Chuyển tiền thành công!";
-		else
-			 set sMessage = "Số tiền muốn chuyển lớn hơn số tiền hiện có trong tài khoản";
-        end if;
-    end if;
-    
 end //
 
+/*
+CREATE VIEW deposists_view AS SELECT * FROM deposits WHERE customer_id = 3; 
+DROP VIEW deposists_view;
+
+*/
+DELETE FROM deposists_view WHERE customer_id = 3;
