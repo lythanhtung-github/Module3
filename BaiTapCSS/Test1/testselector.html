@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* p{
+            color: red;
+        } */
+
+        /* p, h1{
+            color: blue;;
+        } */
+
+        /*Lấy thẻ p trong thẻ div (con, cháu, chắc,...) */
+        /* div p{ 
+            color: blue;
+        } */
+
+        /*Lấy thẻ p LÀ CON thẻ div (con) */
+        /* div>p {
+            color: blue;
+        } */
+
+        /*Lấy thẻ p LÀ anh em gần nhất thẻ div (ngay phía sau) */
+        /* div+p{
+            color: blueviolet;
+        } */
+
+        /* Lấy thẻ p LÀ anh em phía sau thẻ div (tất cả sau div) */
+        /* div~p {
+            color: blueviolet;
+        } */
+
+        .blue{
+            color: blue;
+        }
+
+        #p_red{
+            color: red;
+        }
+
+        p.blue{
+            color: green;
+        }
+
+        [type]{
+            color: aqua;
+        }
+
+        [type = "button"]{
+            color: rgb(238, 247, 247);
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <p class = "blue">TEXT 0</p>
+    <div>
+        <h1>TEST 1</h1>
+        <div>
+            <p class = "blue">TEST 2</p>
+            <p id = "p_red">TEST 3</p>
+            <span>
+                <b class = "blue">TEST 3 -1</b>
+                <span>
+                    <p>TEST 3 -1 -1</p>
+                </span>
+            </span>
+        </div>
+        <p>TEST 4</p>
+        <p>TEST 5</p>
+        <input type="text">
+        <input type="button" name="" id="" value ="Click">
+    </div>
+</body>
+
+</html>

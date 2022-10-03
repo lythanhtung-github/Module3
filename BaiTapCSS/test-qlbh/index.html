@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fontawesome/css/all.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>CG Phone</title>
+</head>
+
+<body>
+    <header>
+        <div class="top">
+            <img style="width:100px; height:40px" src="image/logo.png"></img>
+            <div id="mid">
+                <span class="btn-content">
+                    <span class="btn-circle"></span>
+                </span>
+                <div>Giảm giá đến 30% cho học sinh, sinh viên</div>
+            </div>
+            <div id="log">
+                <a href="#">Đăng nhập</a>
+                <a href="#">Đăng ký</a>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <ul>
+                <li>
+                    <span>Bạn đang xem giá, tồn kho tại:</span>
+                    <select name="" id="select-province">
+                        <option value="">Huế</option>
+                        <option value="">Hà Nội</option>
+                        <option value="">Đà Nẵng</option>
+                    </select>
+                </li>
+                <li><input type="text" placeholder="Bạn tìm gì..."><i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                </li>
+                <li>
+                    <a href="#"></a>
+                    <button><i class="fa-solid fa-cart-shopping"></i>Giỏ hàng</button>
+                </li>
+                <li><a href="#">Lịch sử đơn hàng</a></li>
+                <li><a href="#">Tin tức công nghệ</a></li>
+                <li><a href="#">Hỏi đáp</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="menu-bar">
+        <div class="container">
+            <div class="menu-bar-content">
+                <ul>
+                    <li><a href=""><i class="fa-solid fa-mobile-screen-button"></i>Điện thoại<i
+                                class="fa-solid fa-sort-down"></i></a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="">Apple</a></li>
+                                <li><a href="">Google</a></li>
+                                <li><a href="">Xiaomi</a></li>
+                                <li><a href="">Oppo</a></li>
+                                <li><a href="">Realme</a></li>
+                                <li><a href="">Nokia</a></li>
+                            </ul></a>
+                    </li>
+                    <li><a href=""><i class="fa-solid fa-laptop"></i>Laptop</a></li>
+                    <li><a href=""><i class="fa-solid fa-tablet-screen-button"></i>Máy tính bảng</a></li>
+                    <li><a href=""><i class="fa-solid fa-keyboard"></i>Phụ kiện<i class="fa-solid fa-sort-down"></i></a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="">Pin dự phòng</a></li>
+                                <li><a href="">Củ sạc, cáp sạc</a></li>
+                                <li><a href="">Ốp lưng</a></li>
+                                <li><a href="">Miếng dán màn hình</a></li>
+                                <li><a href="">Giá đỡ điện thoại</a></li>
+                                <li><a href="">Túi chống nước</a></li>
+                                <li><a href="">Chuột, bàn phím</a></li>
+                                <li><a href="">Giá đỡ laptop</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="">Máy cũ giá rẻ</a></li>
+                    <li><a href="">Sim, thẻ cào</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="slider">
+        <div class="container">
+            <div class="slider-content">
+                <div class="slider-content-left">
+                    <div class="slider-content-left-top-container">
+                        <div class="slider-content-left-top">
+                            <a href="#"> <img src="image\slider-image\slider1.png" alt=""></a>
+                            <a href="#"> <img src="image\slider-image\slider2.png" alt=""></a>
+                            <a href="#"> <img src="image\slider-image\slider3.png" alt=""></a>
+                            <a href="#"> <img src="image\slider-image\slider4.png" alt=""></a>
+                            <a href="#"> <img src="image\slider-image\slider5.png" alt=""></a>
+                            <a href="#"> <img src="image\slider-image\slider6.png" alt=""></a>
+                        </div>
+                        <div class="slider-content-left-top-btn">
+                            <i onclick="clickLeft()" class="fa-solid fa-chevron-left"></i>
+                            <i onclick="clickRight()" class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="slider-content-left-mid">
+                        <li onclick="clickContent(0)">Tháng của nàng giảm đến 50%</li>
+                        <li onclick="clickContent(1)" class="active">Nhịn trà sữa mỗi ngày sắp laptop xịn</li>
+                        <li onclick="clickContent(2)">Đặt gạch xiaomi 12T</li>
+                        <li onclick="clickContent(3)">Hot sale realme C30s</li>
+                        <li onclick="clickContent(4)">Samsung Galaxy A giảm đến 30%</li>
+                        <li onclick="clickContent(5)">Oppo reno8 giá sốc</li>
+                    </div>
+                    <div class="slider-content-left-bot">
+                        <li><a href="#"><img src="image\content-bot.png" alt=""></a></li>
+                    </div>
+                </div>
+                <div class="slider-content-right">
+                    <li><a href="#"><img src="image\image5.png" alt=""></a></li>
+                    <li><a href="#"><img src="image\image6.png" alt=""></a></li>
+                    <li><a href="#"><img src="image\image7.png" alt=""></a></li>
+                    <li><a href="#"><img src="image\image8.png" alt=""></a></li>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box-chat">
+        <div class="container d-none">
+            <div class="top-box-chat"><button onclick="turnOffChat()" type="button">X</button></div>
+            <div class="mid-box-chat-top">
+                <p style="font-weight: bold;">Tư vấn viên:</p>
+                <span>- Xin chào em là Lộc nhân viên tư vấn của shop! Em có thể hỗ trợ gì cho anh/chị ạ?</span>
+                <p id ="resultProduct"></p>
+                <p id ="resultLove"></p>
+                <div style="height:80px"></div>
+            </div>
+            <div class="mid-box-chat-bot">
+                <button onclick ="chatProduct()" type="button">Tư vấn sản phẩm</button>
+                <button onclick ="chatLove()" type="button">Tư vấn tình cảm</button>
+            </div>
+            <div class="bot-box-chat">
+                <textarea name="" id="" cols="26" rows="2"></textarea>
+                <button type="button">Gửi</button>
+            </div>
+        </div>
+        <div class="title-chat"><i onclick="clickChat()" class="fa-solid fa-comment-dots"></i></div>
+    </section>
+
+</body>
+<script src="script.js"></script>
+
+</html>
