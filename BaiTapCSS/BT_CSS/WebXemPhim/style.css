@@ -1,0 +1,32 @@
+.menu-bar {
+    margin-top: 10px;
+    padding: 0px;
+}
+
+#navbarNav>ul {
+    margin: 0px auto;
+    font-weight: bold;
+}
+
+#navbarNav>ul>li:nth-child(2) {
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+
+#navbarNav>ul>li:nth-child(3) {
+    border-right: 1px solid black;
+}
+
+.content {
+    display: flex;
+}
+
+.iframe-big {
+    width: 650px;
+    height: 1000px;
+}
+
+.iframe-small {
+    width: 350px;
+    height: 280px;
+}
