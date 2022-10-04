@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Xem phim trực tuyến</title>
+    <style>
+        .menu-bar {
+            margin-top: 10px;
+            padding: 0px;
+        }
+
+        #navbarNav>ul {
+            margin: 0px auto;
+            font-weight: bold;
+        }
+
+        #navbarNav>ul>li:nth-child(2) {
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+        }
+
+        #navbarNav>ul>li:nth-child(3) {
+            border-right: 1px solid black;
+        }
+
+        .content {
+            display: flex;
+        }
+
+        .iframe-big {
+            width: 650px;
+            height: 1000px;
+        }
+
+        .iframe-small {
+            width: 350px;
+            height: 280px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="https://s199.imacdn.com/web-thumbnail.png" width="30" height="30"
+                    class="d-inline-block align-top" alt="">
+                Xem phim trực tuyến
+            </a>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light menu-bar">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Phim hoạt hình</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Phim hoạt hình yêu thích</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nhân vật hoạt hình</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Góp ý</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="content">
+            <div class="col-ms-4 content-left">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item iframe-small"
+                        src="https://vuighe.net/digimon-ghost-game/tap-43-mat-do" allowfullscreen></iframe>
+                </div>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item iframe-small"
+                        src="https://vuighe.net/digimon-ghost-game/tap-43-mat-do" allowfullscreen></iframe>
+                </div>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item iframe-small"
+                        src="https://vuighe.net/digimon-ghost-game/tap-43-mat-do" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-ms-8 content-right">
+                <div class="content-right-content">
+                    <iframe class="embed-responsive-item iframe-big"
+                        src="https://vuighe.net/mobile-suit-gundam-the-witch-from-mercury/tap-1"
+                        allowfullscreen></iframe>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
