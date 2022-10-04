@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+i{
+    padding:10px 10px;
+}
+
+header {
+    width: 1310px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 20px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: antiquewhite;
+}
+
+header .header-left {
+    width: 33%;
+    margin-right: auto;
+}
+
+header .header-left a {
+    font-size: 30px;
+    vertical-align: middle;
+}
+
+header .header-left input {
+    padding: 0px 10px;
+    width: 40%;
+    height: 30px;
+    border-radius: 20px;
+}
+
+header .header-mid {
+    padding: 10px;
+    width: 33%;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .header-right {
+    padding: 10px 0px;
+    width: 33%;
+    margin-left: auto;
+    text-align: end;
+}
+
+header .header-right a {
+    margin: 0px 15px;
+}
+
+header .header-mid a {
+    margin: 0px 15px;
+}
+
+.container{
+    margin-top: 60px;
+    width: 1310px;
+    height: 40%;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 1px solid black;
+    /* background-color: red; */
+}
+
+.container .container-left{
+    width: 33%; 
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0px;
+    padding-left: 10px;
+}
+
+
+.container .container-mid{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-mid-top{
+    margin: 10px
+}
+
+.title{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0px;
+}
+
+.myday{
+    display: flex;
+    justify-content: space-around;
+}
+
+.myday img{
+    width:75px;
+    height: 120px;
+    border-radius: 10px;
+}
+
+.status{
+    height: 20%;
+}
+
+.status-top{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.status-top input{
+    width: 80%;
+    border-radius: 20px;
+    padding: 0px 10px;
+    margin-bottom: 10px;
+}
+.select{
+    display: flex;
+    justify-content: space-around;
+}
+.select a{
+    font-size: 16px;
+}
+
+.container-mid-newfeed{
+    display: flex;
+    flex-direction: column;
+}
+
+.newfeed{
+    width: 100%;
+    height: 300px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.container .container-right{
+    width: 33%;
+    display: flex;
+    position: fixed;
+    right: 0px;
+}
+
+.container-right-left{
+    width: 40%;
+}
+
+.container-right-right{
+    width: 60%;
+    margin-top:10px;
+}
+
+.container-right-right p{
+    font-size: 16px;
+    padding: 5px;
+}

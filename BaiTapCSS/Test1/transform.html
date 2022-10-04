@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .transform {
+            margin-left: 200px;
+            height: 200px;
+            width: 200px;
+            background-color: black;
+            animation: change 1s linear infinite;
+        }
+
+        @keyframes change {
+            from {
+                transform: none;
+            }
+
+            to {
+                /*Quay theo chiều kim đồng hồ 10 độ, muốn ngược chiều thì cho số âm*/
+                /* transform: rotate(45deg); */
+                /* Định nghĩa một phép quay 3D dọc theo trục X,Y. */
+                /* transform: rotateX(30deg); */
+                /* transform: rotateY(45deg); */
+
+                /*Nghiêng theo X,Y */
+                /* transform: skew(20deg, 20deg); */
+                /* transform: skewX(30deg); */
+                /* transform: skewY(30deg); */
+
+                /*Dịch chuyển theo X,Y*/
+                /* transform: translate(20px, 10px); */
+
+                /*Phóng to thu nhỏ*/
+                /* transform: scale(2, 2); */
+                /* transform: scale(0.2, 0.3); */
+
+                /*Ma trận*/
+                /* transform: matrix(0.866, 0.7, -0.8, 0.866, 0, 0); */
+                /* transform: matrix(0.586, 0.8, -0.8, 0.586, 0, 0); */
+                /* transform: matrix(0.586, 0.8, -0.8, 0.586, 40, 30); */
+            }
+        }
+
+
+        img {
+            height: 150px;
+            width: 170px;
+            transition: width 2s;
+            /*Khi nào thay đổi giá trị của width thì thực hiện trong 2s*/
+        }
+
+        img:hover {
+            width: 300px;
+        }
+
+        .transition {
+            width: 100px;
+            height: 100px;
+            background: red;
+            transition: width 2s;
+        }
+
+        .transition:hover {
+            width: 300px;
+        }
+
+        #div1 {
+            transition-timing-function: linear;
+        }
+
+        #div2 {
+            transition-timing-function: ease;
+        }
+
+        #div3 {
+            transition-timing-function: ease-in;
+        }
+
+        #div4 {
+            transition-timing-function: ease-out;
+        }
+
+        #div5 {
+            transition-timing-function: ease-in-out;
+        }
+
+        #div6 {
+            transition: width 2s linear 1s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img
+        src="https://vivaweb.com.vn/wp-content/uploads/2021/06/Tang-doanh-thu-cuc-nhanh-voi-thiet-ke-web-doanh-nghiep-3.jpg">
+    <img
+        src="https://vivaweb.com.vn/wp-content/uploads/2021/06/Tang-doanh-thu-cuc-nhanh-voi-thiet-ke-web-doanh-nghiep-3.jpg">
+    <img
+        src="https://vivaweb.com.vn/wp-content/uploads/2021/06/Tang-doanh-thu-cuc-nhanh-voi-thiet-ke-web-doanh-nghiep-3.jpg">
+    <img
+        src="https://vivaweb.com.vn/wp-content/uploads/2021/06/Tang-doanh-thu-cuc-nhanh-voi-thiet-ke-web-doanh-nghiep-3.jpg">
+
+    <div class="transform"></div>
+
+    <div class="transition" id="div1">linear: đều nhau về tốc độ</div><br>
+    <div class="transition" id="div2">ease: bắt đầu chậm, giữa nhanh, kết thúc chậm</div><br>
+    <div class="transition" id="div3">ease-in: đầu chậm sau nhanh</div><br>
+    <div class="transition" id="div4">ease-out: đầu nhanh sau chậm</div><br>
+    <div class="transition" id="div5">ease-in-out: bắt đầu chậm kết thúc chậm</div><br>
+    <div class="transition" id="div6">transition: width 2s linear 1s: có độ trễ 1s khi bắt đầu, kết thúc</div><br>
+</body>
+
+</html>
+
+<!-- 
+
+    1. Transform CSS được dịch là thuộc tính chuyển đổi. Nó cho phép bạn thay đổi vị trí, 
+    hình dáng và xoay các phần tử theo nhiều hướng khác nhau
+
+    2. Transitions cung cấp cách giúp lập trình viên điều khiển tốc độ của hiệu ứng ngay 
+    khi thay đổi các thuộc tính có trong CSS
+
+    3.Animation Nó cho phép chúng ta tạo hiệu ứng chuyển động mà không phải sử dụng Javascript hay Flash.(dùng keyframes)
+-->

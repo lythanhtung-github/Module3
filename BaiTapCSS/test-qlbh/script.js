@@ -22,9 +22,9 @@ function clickRight() {
 const imgNumberLi = document.querySelectorAll(".slider-content-left-mid li");
 
 function clickContent(number) {
-removeActive();
+    removeActive();
     for (let i = 0; i < imgNumberLi.length; i++) {
-         
+
         if (i == number) {
             document.querySelector(".slider-content-left-top").style.right = i * 100 + "%";
             imgNumberLi[i].classList.add("active");
@@ -37,16 +37,17 @@ function removeActive() {
     imgActive.classList.remove("active")
 }
 
-// setInterval(clickRight(),1000);
+setInterval(clickRight,5000);
+
 let formChat = document.querySelector(".box-chat>.container");
 let iconChat = document.querySelector(".title-chat");
-console.log(formChat);
-function clickChat(){
+
+function clickChat() {
     formChat.classList.remove('d-none');
     iconChat.classList.add('d-none');
 }
 
-function turnOffChat(){
+function turnOffChat() {
     formChat.classList.add('d-none');
     iconChat.classList.remove('d-none');
 }
@@ -54,12 +55,12 @@ function turnOffChat(){
 let resultProduct = document.querySelector('#resultProduct');
 let resultLove = document.querySelector('#resultLove');
 
-function chatProduct(){
+function chatProduct() {
     resultLove.innerHTML = "";
     resultProduct.innerHTML = "- Cửa hàng hiện tại có rất nhiều sản phẩm, anh/chị có thể thêm vào giỏ hàng và thanh toán ạ!";
 }
 
-function chatLove(){
+function chatLove() {
     resultLove.innerHTML = "- Lộc yêu anh/chị ạ!";
-    resultProduct.innerHTML ="";
+    resultProduct.innerHTML = "";
 }
