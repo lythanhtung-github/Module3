@@ -7,8 +7,8 @@ function clickLeft() {
     if (index < 0) {
         index = imgNumber.length - 1;
     }
-    console.log(index);
     document.querySelector(".slider-content-left-top").style.right = index * 100 + "%";
+    clickContent(index);
 }
 
 function clickRight() {
@@ -17,6 +17,7 @@ function clickRight() {
         index = 0;
     }
     document.querySelector(".slider-content-left-top").style.right = index * 100 + "%";
+    clickContent(index);
 }
 
 const imgNumberLi = document.querySelectorAll(".slider-content-left-mid li");

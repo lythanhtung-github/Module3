@@ -272,6 +272,7 @@ nav div ul li:nth-child(6) a:hover {
     top: -10px;
     font-size: 10px;
     color: white;
+    animation: change-color-discount 1s infinite linear;
 }
 
 .menu-bar-content>ul>li:nth-child(2)::before {
@@ -286,6 +287,17 @@ nav div ul li:nth-child(6) a:hover {
     top: -10px;
     font-size: 10px;
     color: white;
+    animation: change-color-discount 1s infinite linear;
+}
+
+@keyframes change-color-discount {
+    from {
+        background-color: #F51212;
+    }
+    to {
+        background-color: yellow;
+        color: black;
+    }
 }
 
 .menu-bar-content ul li {
@@ -520,7 +532,7 @@ nav div ul li:nth-child(6) a:hover {
 
 @keyframes change-color-chat-title{
     from{
-        color: rgb(0, 47, 255); 
+        color: rgb(0, 47, 255);
     }
     to{
         color: rgb(78, 113, 240);
