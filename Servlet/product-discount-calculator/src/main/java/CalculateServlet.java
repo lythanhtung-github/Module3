@@ -16,7 +16,7 @@ public class CalculateServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String description = req.getParameter("description");
-        float price = Float.parseFloat(req.getParameter("price"));
+        float price = Float.parseFloat(req.getParameter("445g5price"));
         float discountPercent = Float.parseFloat(req.getParameter("discountPercent"));
 
         float discountAmount = price * discountPercent/100;
