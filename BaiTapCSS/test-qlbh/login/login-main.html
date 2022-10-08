@@ -41,7 +41,7 @@ form p
     font-weight: 500;
     color: #fff;
     opacity: 0.7;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin-top: 0;
     margin-bottom: 60px;
     text-shadow: 2px 2px 4px rgba(0,0,0, 0.2);
@@ -50,7 +50,8 @@ form a
 {
     text-decoration: none;
     color: #ddd;
-    font-size: 12px;
+    font-size: 13px;
+    margin: 0px 8px;
 }
 form a:hover
 {
@@ -85,9 +86,11 @@ form input
 form input:hover
 {
     background: rgba(255,255,255, 0.1);
+    /* background: rgba(247, 244, 244, 0.1);
+    color:black; */
     box-shadow: 4px 4px 60px 8px rgba(0,0,0, 0.2);
 }
-form input[type="email"]:focus,
+form input[type="text"]:focus,
 form input[type="password"]:focus
 {
     background: rgba(255,255,255, 0.1);
@@ -122,6 +125,7 @@ form:hover
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0,0,0, 0.4);
 }
+
 a,
 input:focus,
 button:focus,
@@ -129,6 +133,7 @@ select:focus
 {
     outline: none;
 }
+
 .drop
 {
     background: rgba(255,255,255, 0.06);
@@ -141,8 +146,8 @@ select:focus
   position: absolute;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-
 }
+
 .drop-1
 {
     height: 80px;
@@ -174,6 +179,7 @@ select:focus
     top: -60px;
     right: -60px;
 }
+
 .drop-5
 {
     height: 60px;
@@ -182,16 +188,18 @@ select:focus
     left: 90px;
     z-index: -1;
 }
+
 </style>   
 </head>
 <body>
 <div class="container">
     <form>
         <p>Welcome</p>
-        <input type="email" placeholder="Email"><br>
-        <input type="password" placeholder="Password"><br>
-        <input type="button" value="Sign in"><br>
-        <a href="#">Forgot Password?</a>
+        <input type="text" placeholder="Tài khoản"><br>
+        <input type="password" placeholder="Mật khẩu    "><br>
+        <input type="button" value="Đăng nhập"><br>
+        <a href="#">Đăng ký</a>
+        <a href="#">Quên mật khẩu?</a>
     </form>
 
     <div class="drops">
@@ -203,7 +211,5 @@ select:focus
     </div>
 
 </div>
-
-
 </body>
 </html>
