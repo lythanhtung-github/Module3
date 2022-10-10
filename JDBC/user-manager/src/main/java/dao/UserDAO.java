@@ -2,7 +2,9 @@ package dao;
 
 import model.User;
 
+import java.math.BigDecimal;
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -293,6 +295,41 @@ public class UserDAO implements IUserDAO {
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
             }
+        }
+    }
+
+    private static final String SQL_INSERT = "INSERT INTO EMPLOYEE (NAME, SALARY, CREATED_DATE) VALUES (?,?,?)";
+    private static final String SQL_UPDATE = "UPDATE EMPLOYEE SET SALARY=? WHERE NAME=?";
+    private static final String SQL_TABLE_CREATE = "CREATE TABLE EMPLOYEE"
+            + "("
+            + " ID serial,"
+            + " NAME varchar(100) NOT NULL,"
+            + " SALARY numeric(15, 2) NOT NULL,"
+            + " CREATED_DATE timestamp,"
+            + " PRIMARY KEY (ID)"
+            + ")";
+    private static final String SQL_TABLE_DROP = "DROP TABLE IF EXISTS EMPLOYEE";
+    @Override
+    public void insertUpdateWithoutTransaction() {
+        try (Connection conn = getConnection();
+             Statement statement = conn.createStatement();
+             PreparedStatement psInsert = conn.prepareStatement(SQL_INSERT);
+             PreparedStatement psUpdate = conn.prepareStatement(SQL_UPDATE)) {
+            statement.execute(SQL_TABLE_DROP);
+            statement.execute(SQL_TABLE_CREATE);
+            psInsert.setString(1, "Quynh");
+            psInsert.setBigDecimal(2, new BigDecimal(10));
+            psInsert.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+            psInsert.execute();
+            psInsert.setString(1, "Ngan");
+            psInsert.setBigDecimal(2, new BigDecimal(20));
+            psInsert.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+            psInsert.execute();
+            psUpdate.setBigDecimal(2, new BigDecimal(999.99));
+            psUpdate.setString(2, "Quynh");
+            psUpdate.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
