@@ -18,9 +18,9 @@ public class ThinkServlet extends HttpServlet {
         String think = req.getParameter("think");
         req.setAttribute("think", think);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/show.jsp");
-        dispatcher.forward(req, resp);
-//        dispatcher.include(req,resp);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/include.jsp");
+//        dispatcher.forward(req, resp);
+        dispatcher.include(req,resp);
 
 //        resp.sendRedirect("/show.jsp");
     }

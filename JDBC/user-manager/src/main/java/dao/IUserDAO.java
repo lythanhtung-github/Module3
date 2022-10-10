@@ -20,4 +20,8 @@ public interface IUserDAO {
 
     public List<User> orderByNameASC();
     public List<User> orderByNameDESC();
+
+    User getUserById(int id);
+
+    void insertUserStore(User user) throws SQLException;
 }
