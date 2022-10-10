@@ -3,23 +3,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>User Management Application</title>
+    <title>find</title>
 </head>
 <body>
 <center>
-    <h1>User Management</h1>
+    <h1>Find by country</h1>
     <h2>
-        <a href="/users?action=create">Add New User</a>
+        <a href="/users">Back to users list</a>
     </h2>
 </center>
 <div align="center">
-    <form action="/users?action=find" method ="post" >
-        <input type="text" name="country" placeholder="Country">
-        <input type="submit" value="Find">
-    </form>
-    <a href="/users?action=order&type=ASC">Order ASC</a>
-    <a href="/users?action=order&type=DESC">Order DESC</a>
-<%--    <input type="text" >--%>
+    <%--    <input type="text" >--%>
     <table border="1" cellpadding="5">
         <caption><h2>List of Users</h2></caption>
         <tr>
@@ -29,7 +23,7 @@
             <th>Country</th>
             <th>Actions</th>
         </tr>
-        <c:forEach var="user" items="${listUser}">
+        <c:forEach var="user" items="${users}">
             <tr>
                 <td><c:out value="${user.id}"/></td>
                 <td><c:out value="${user.name}"/></td>

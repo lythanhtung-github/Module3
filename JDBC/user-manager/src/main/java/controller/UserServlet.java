@@ -36,11 +36,24 @@ public class UserServlet extends HttpServlet {
                 case "edit":
                     updateUser(request, response);
                     break;
+                case "find":
+                    findUser(request,response);
+                    break;
             }
         } catch (SQLException ex) {
             throw new ServletException(ex);
         }
     }
+
+    private void findUser(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String country = request.getParameter("country");
+        List<User> users = userDAO.findByCountry(country);
+        request.setAttribute("users", users);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("user/find.jsp");
+        requestDispatcher.forward(request,response);
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -57,6 +70,9 @@ public class UserServlet extends HttpServlet {
                 case "delete":
                     deleteUser(request, response);
                     break;
+                case "order":
+                    orderUser(request, response);
+                    break;
                 default:
                     listUser(request, response);
                     break;
@@ -64,6 +80,16 @@ public class UserServlet extends HttpServlet {
         } catch (SQLException ex) {
             throw new ServletException(ex);
         }
+    }
+
+    private void orderUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String type = request.getParameter("type");
+        List<User> listUser = null;
+        if(type.equals("ASC")) listUser = userDAO.orderByNameASC();
+        if(type.equals("DESC")) listUser = userDAO.orderByNameDESC();
+        request.setAttribute("listUser", listUser);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
+        dispatcher.forward(request, response);
     }
 
     private void listUser(HttpServletRequest request, HttpServletResponse response)
