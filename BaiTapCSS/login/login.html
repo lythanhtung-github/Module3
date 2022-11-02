@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Đăng nhập</title>
+</head>
+
+<body>
+    <div class="login-card-container">
+        <div class="login-card">
+            <div class="login-card-logo">
+                <img src="https://iconarchive.com/download/i83646/pelfusion/long-shadow-media/Mobile-Phone.ico"
+                    alt="logo">
+            </div>
+            <div class="login-card-header">
+                <h1>Đăng nhập</h1>
+                <div>Vui lòng đăng nhập để sử dụng</div>
+            </div>
+            <form class="login-card-form">
+                <div class="form-item">
+                    <span class="form-item-icon"><i class="fa-solid fa-user-pen"></i></span>
+                    <input type="email" placeholder="Nhập email" required autofocus>
+                </div>
+                <div class="form-item">
+                    <span class="form-item-icon"><i class="fa-solid fa-key"></i></span>
+                    <input type="password" id="ip-password-login" placeholder="Nhập mật khẩu" required>
+                    <span class="show-password" onclick="showPassword1()"><i class="fa-solid fa-eye"></i></span>
+                </div>
+                <div class="form-item-other">
+                    <div class="checkbox">
+                        <input type="checkbox" id="rememberMeCheckBox">
+                        <label for="rememberMeCheckBox">Nhớ tài khoản</label>
+                    </div>
+                    <a href="#">Quên mật khẩu</a>
+                </div>
+                <button type="submit">Đăng nhập</button>
+            </form>
+            <div class="login-card-footer">
+                Bạn chưa có tài khoản? <a href="register.html">Tạo tài khoản mới</a>.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

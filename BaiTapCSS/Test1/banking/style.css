@@ -1,7 +1,3 @@
-.container {
-    
-}
-
 h1 {
     color: white;
 }
@@ -11,7 +7,7 @@ a {
 }
 
 .head {
-    padding: 20px;
+    padding: 10px;
     background-color: #1baa09;
 }
 

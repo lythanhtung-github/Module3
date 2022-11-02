@@ -22,7 +22,7 @@
             <th>Country</th>
             <th>Actions</th>
         </tr>
-        <c:forEach var="user" items="${listUser}">
+            <c:forEach var="user" items="${listUser}">
             <tr>
                 <td><c:out value="${user.getId()}"/></td>
                 <td><c:out value="${user.getName()}"/></td>

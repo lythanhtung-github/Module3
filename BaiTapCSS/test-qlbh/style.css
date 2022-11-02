@@ -569,3 +569,32 @@ nav div ul li:nth-child(6) a:hover {
 .d-none {
     display: none;
 }
+
+/* sản phẩm */
+.slider-product-one-content{
+    background-color: #00c2cb;
+    padding:12px;
+}
+.slider-product-one-content-title h2{
+ font-style: italic;
+}
+
+.slider-product-one-content-items{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.slider-product-one-content-item{
+    width: 19%;
+    background-color: #ddd;
+    padding: 50px 12px 12px;
+    border-radius: 5px;
+}
+
+.slider-product-one-content-item> img{
+    width:100%;
+}
+
+.slider-product-one-content-item-text{
+    padding-top: 20px;
+}

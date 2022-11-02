@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="product.css">
+    <title>Admin</title>
+    <style>
+        button {
+            cursor: pointer;
+        }
+        body{
+            padding:20px;
+        }
+        .form-input{
+            padding:20px;
+            border:1px solid #eee;
+            border-radius: 4px;
+            width:200px;
+            height: auto;
+            transform: 0.25s ease;
+        }
+
+        .form-input:focus{
+            border-color: #6a5af9;
+        }
+
+        .form-field{
+            position: relative;
+        }
+        .form-label{
+            position:absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left:21px;
+            user-select: none;
+            color:#999;
+            pointer-events: none;
+            transition: 0.25s ease;
+        }
+        .form-input:not(:placeholder-shown)+ .form-label,
+        .form-input:focus + .form-label{
+            top:0px;
+            padding: 10px;
+            left:11px;
+            display: inline-block;
+            background-color: white;
+            color: #6a5af9;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-field">
+        <input type="text" class ="form-input" placeholder=" "/>
+        <label for="name" class ="form-label">Name</label>
+    </div>
+    <div class="form-field">
+        <textarea class="form-input" id="textAreaExample1" rows="5"></textarea>
+        <label class="form-label" for="textAreaExample">Message</label>
+      </div>
+</body>
+</html>

@@ -1,0 +1,217 @@
+:root {
+    --main-bg-color: #009d63;
+    --main-text-color: #009d63;
+    --second-text-color: #bbbec5;
+    --second-bg-color: #c1efde;
+}
+
+h2 {
+    color: var(--main-text-color);
+}
+
+.primary-text {
+    color: var(--main-text-color);
+}
+
+.second-text {
+    color: var(--second-text-color);
+}
+
+.primary-bg {
+    background-color: var(--main-bg-color);
+}
+
+.secondary-bg {
+    background-color: var(--second-bg-color);
+}
+
+.rounded-full {
+    border-radius: 100%;
+}
+
+#wrapper {
+    overflow-x: hidden;
+    background-image: linear-gradient(to right,
+            #baf3d7,
+            #c2f5de,
+            #cbf7e4,
+            #d4f8ea,
+            #ddfaef);
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin 0.25s ease-out;
+    -moz-transition: margin 0.25s ease-out;
+    -o-transition: margin 0.25s ease-out;
+    transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+    width: 15rem;
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+#menu-toggle {
+    cursor: pointer;
+}
+
+.list-group-item {
+    border: none;
+    padding: 20px 30px;
+}
+
+.list-group-item.active {
+    background-color: transparent;
+    color: var(--main-text-color);
+    font-weight: bold;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}
+
+table>tbody>tr>td img {
+    width: 50px;
+}
+
+table>tbody>tr>td img:hover {
+    width: 60px;
+}
+
+table {
+    margin: 10px 0;
+}
+
+table>thead>tr {
+    background-color: #080808;
+    color: #ffffff;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.input-group input {
+    width: 80%;
+}
+
+.input-group button {
+    width: 20%;
+}
+
+/*sadasdasd*/
+
+.form-image img {
+    margin-left: 20px;
+    border-radius: 5px;
+    transition: 0.5s ease;
+    width: 80%;
+}
+
+.form-image img:hover {
+    margin-left: 20px;
+    border-radius: 5px;
+    width: 85%;
+}
+
+.form-input {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    width: 90%;
+    transform: 0.25s ease;
+    margin: 0px 0px;
+}
+
+.form-input:focus {
+    border-color: #6a5af9;
+}
+
+.form-field {
+    position: relative;
+}
+
+.form-field input {
+    height: 50px;
+}
+
+.form-label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 21px;
+    user-select: none;
+    color: #999;
+    pointer-events: none;
+    transition: 0.25s ease;
+
+}
+
+#form-label-textarea {
+    position: absolute;
+    top: 25%;
+    transform: translateY(-50%);
+    left: 21px;
+    user-select: none;
+    color: #999;
+    pointer-events: none;
+    transition: 0.25s ease;
+}
+
+.form-label:hover {
+    border: 2px red solid;
+}
+
+.error-label {
+    font-size: 13px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+
+.form-input:not(:placeholder-shown)+.form-label,
+.form-input:focus+.form-label {
+    top: 0px;
+    padding: 10px;
+    left: 11px;
+    display: inline-block;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+}
+
+.form-input:not(:placeholder-shown)+#form-label-textarea,
+.form-input:focus+#form-label-textarea {
+    top: 0px;
+    padding: 10px;
+    left: 11px;
+    display: inline-block;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+}
